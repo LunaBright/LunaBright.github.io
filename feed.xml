@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>LunaBright</title>
+  <subtitle>LunaBright 的个人主页：技术笔记、学习心得与生活记录</subtitle>
+  <link href="https://lunabright.github.io/feed.xml" rel="self"/>
+  <link href="https://lunabright.github.io/" rel="alternate"/>
+  <updated>2026-08-08T00:00:00+08:00</updated>
+  <author><name>LunaBright</name><email>2154626568@qq.com</email></author>
+  <id>https://lunabright.github.io/</id>
+  <entry>
+    <title>用 GitHub Pages 搭建个人主页</title>
+    <link href="https://lunabright.github.io/blog/posts/2026-08-08-github-pages-guide.html"/>
+    <id>https://lunabright.github.io/blog/posts/2026-08-08-github-pages-guide.html</id>
+    <updated>2026-08-08T00:00:00+08:00</updated>
+    <author><name>LunaBright</name></author>
+    <summary>从零开始、免费托管个人主页的完整指南：创建仓库、生成站点、启用 Pages 三步搞定。</summary>
+    <content type="html">&lt;p&gt;GitHub Pages 是 GitHub 提供的&lt;strong&gt;免费静态网站托管服务&lt;/strong&gt;。这篇文章记录我搭建这个主页的完整过程，也方便你参考。&lt;/p&gt;
+&lt;h2&gt;第一步：创建仓库&lt;/h2&gt;
+&lt;p&gt;个人主页的仓库名必须和你的 GitHub 用户名一致，格式是 &lt;code&gt;用户名.github.io&lt;/code&gt;。&lt;/p&gt;
+&lt;pre&gt;&lt;code class="lang-bash"&gt;# 例如用户名为 LunaBright
+# 仓库名就是 LunaBright.github.io&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;第二步：准备网站文件&lt;/h2&gt;
+&lt;p&gt;本站点的结构如下：&lt;/p&gt;
+&lt;pre&gt;&lt;code class="lang-text"&gt;.
+├── index.html        # 首页（由 build.py 自动更新“最新文章”）
+├── blog/             # 博客列表与文章页（自动生成）
+├── posts/            # 文章源文件，写 Markdown 的地方
+├── pages/            # 页面内容模板
+├── templates/        # 页头 / 页脚共享模板
+├── assets/           # 样式、脚本、图标
+└── build.py          # 站点生成器&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;写完文章后，运行生成器即可：&lt;/p&gt;
+&lt;pre&gt;&lt;code class="lang-bash"&gt;python build.py&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;第三步：启用 GitHub Pages&lt;/h2&gt;
+&lt;ol&gt;&lt;li&gt;进入仓库的 &lt;strong&gt;Settings → Pages&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;Source 选择 &lt;strong&gt;Deploy from a branch&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;Branch 选择 &lt;code&gt;main&lt;/code&gt;，目录选择 &lt;code&gt;/ (root)&lt;/code&gt;&lt;/li&gt;&lt;li&gt;点击 &lt;strong&gt;Save&lt;/strong&gt;，稍等一分钟即可访问&lt;/li&gt;&lt;/ol&gt;
+&lt;p&gt;访问地址就是 &lt;code&gt;https://用户名.github.io&lt;/code&gt;。&lt;/p&gt;
+&lt;h2&gt;几个实用提示&lt;/h2&gt;
+&lt;ul&gt;&lt;li&gt;仓库里的 &lt;code&gt;.nojekyll&lt;/code&gt; 空文件可以跳过 Jekyll 构建，纯静态页面部署更快&lt;/li&gt;&lt;li&gt;文章更新后记得先运行 &lt;code&gt;python build.py&lt;/code&gt; 再推送&lt;/li&gt;&lt;li&gt;想换域名？在仓库 Settings 的 Custom domain 里配置，并添加一条 CNAME 解析即可&lt;/li&gt;&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;以上就是搭建的全部过程。如果你也在折腾自己的小站，欢迎和我交流！✌️&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <title>欢迎来到我的博客</title>
+    <link href="https://lunabright.github.io/blog/posts/2026-08-08-welcome.html"/>
+    <id>https://lunabright.github.io/blog/posts/2026-08-08-welcome.html</id>
+    <updated>2026-08-08T00:00:00+08:00</updated>
+    <author><name>LunaBright</name></author>
+    <summary>这是我博客的第一篇文章，聊聊这里会写些什么，以及这个网站是怎么运转的。</summary>
+    <content type="html">&lt;p&gt;欢迎来到我的小站！🎉&lt;/p&gt;
+&lt;p&gt;这是我搭建个人主页后写下的第一篇文章。之后我会在这里分享：&lt;/p&gt;
+&lt;ul&gt;&lt;li&gt;技术笔记：Python、Web 开发、Git 等&lt;/li&gt;&lt;li&gt;学习心得：读书、课程、项目复盘&lt;/li&gt;&lt;li&gt;生活记录：一些值得记住的瞬间&lt;/li&gt;&lt;/ul&gt;
+&lt;h2&gt;这个网站是怎么工作的？&lt;/h2&gt;
+&lt;p&gt;这个站点是&lt;strong&gt;纯静态网站&lt;/strong&gt;，通过 &lt;code&gt;build.py&lt;/code&gt; 把 Markdown 文章转换成 HTML 页面，再托管在 &lt;strong&gt;GitHub Pages&lt;/strong&gt; 上，完全免费、不需要服务器。&lt;/p&gt;
+&lt;blockquote&gt;&lt;p&gt;如果你对搭建过程感兴趣，可以看看我写的《用 GitHub Pages 搭建个人主页》。&lt;/p&gt;&lt;/blockquote&gt;
+&lt;h2&gt;如何发布一篇新文章？&lt;/h2&gt;
+&lt;p&gt;步骤非常简单：&lt;/p&gt;
+&lt;ol&gt;&lt;li&gt;在 &lt;code&gt;posts/&lt;/code&gt; 目录下新建一个 Markdown 文件&lt;/li&gt;&lt;li&gt;在文件开头写上标题、日期和标签&lt;/li&gt;&lt;li&gt;运行 &lt;code&gt;python build.py&lt;/code&gt; 生成页面&lt;/li&gt;&lt;li&gt;用 &lt;code&gt;git push&lt;/code&gt; 推送到 GitHub&lt;/li&gt;&lt;/ol&gt;
+&lt;p&gt;代码块长这样：&lt;/p&gt;
+&lt;pre&gt;&lt;code class="lang-bash"&gt;python build.py&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;写起来只需要会 Markdown 就行，非常轻量。我们下一篇见！👋&lt;/p&gt;</content>
+  </entry>
+</feed>

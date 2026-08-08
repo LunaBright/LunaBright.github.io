@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>用 GitHub Pages 搭建个人主页 · LunaBright</title>
+  <meta name="description" content="从零开始、免费托管个人主页的完整指南：创建仓库、生成站点、启用 Pages 三步搞定。">
+  <meta property="og:title" content="用 GitHub Pages 搭建个人主页 · LunaBright">
+  <meta property="og:description" content="从零开始、免费托管个人主页的完整指南：创建仓库、生成站点、启用 Pages 三步搞定。">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="alternate" type="application/atom+xml" title="订阅本站" href="../../feed.xml">
+  <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#content">跳到主要内容</a>
+  <header class="site-nav">
+    <nav class="nav-inner" aria-label="主导航">
+      <a class="nav-logo" href="../../index.html">LunaBright<span class="nav-logo-dot">.</span></a>
+      <button class="nav-toggle" aria-label="打开菜单" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="nav-links">
+        <a class="nav-link" href="../../index.html">首页</a>
+        <a class="nav-link" href="../../index.html#about">关于</a>
+        <a class="nav-link active" href="../../blog/index.html">博客</a>
+        <a class="nav-link" href="../../index.html#contact">联系</a>
+        <a class="nav-link nav-icon" href="https://github.com/LunaBright" target="_blank" rel="noopener" aria-label="GitHub 主页">
+          <svg viewBox="0 0 16 16" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+        </a>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换浅色/深色主题"></button>
+      </div>
+    </nav>
+  </header>
+  <main id="content">
+
+<article class="post">
+  <div class="container container-narrow">
+    <header class="post-header">
+      <p class="page-eyebrow"><a href="../index.html">← 返回博客</a></p>
+      <h1 class="post-title">用 GitHub Pages 搭建个人主页</h1>
+      <div class="post-meta">
+        <time datetime="2026-08-08">2026 年 8 月 8 日</time>
+        <span>·</span>
+        <span>约 1 分钟阅读</span>
+        <span class="tag">教程</span><span class="tag">GitHub</span><span class="tag">建站</span>
+      </div>
+    </header>
+    <div class="prose">
+<p>GitHub Pages 是 GitHub 提供的<strong>免费静态网站托管服务</strong>。这篇文章记录我搭建这个主页的完整过程，也方便你参考。</p>
+<h2>第一步：创建仓库</h2>
+<p>个人主页的仓库名必须和你的 GitHub 用户名一致，格式是 <code>用户名.github.io</code>。</p>
+<pre><code class="lang-bash"># 例如用户名为 LunaBright
+# 仓库名就是 LunaBright.github.io</code></pre>
+<h2>第二步：准备网站文件</h2>
+<p>本站点的结构如下：</p>
+<pre><code class="lang-text">.
+├── index.html        # 首页（由 build.py 自动更新“最新文章”）
+├── blog/             # 博客列表与文章页（自动生成）
+├── posts/            # 文章源文件，写 Markdown 的地方
+├── pages/            # 页面内容模板
+├── templates/        # 页头 / 页脚共享模板
+├── assets/           # 样式、脚本、图标
+└── build.py          # 站点生成器</code></pre>
+<p>写完文章后，运行生成器即可：</p>
+<pre><code class="lang-bash">python build.py</code></pre>
+<h2>第三步：启用 GitHub Pages</h2>
+<ol><li>进入仓库的 <strong>Settings → Pages</strong></li><li>Source 选择 <strong>Deploy from a branch</strong></li><li>Branch 选择 <code>main</code>，目录选择 <code>/ (root)</code></li><li>点击 <strong>Save</strong>，稍等一分钟即可访问</li></ol>
+<p>访问地址就是 <code>https://用户名.github.io</code>。</p>
+<h2>几个实用提示</h2>
+<ul><li>仓库里的 <code>.nojekyll</code> 空文件可以跳过 Jekyll 构建，纯静态页面部署更快</li><li>文章更新后记得先运行 <code>python build.py</code> 再推送</li><li>想换域名？在仓库 Settings 的 Custom domain 里配置，并添加一条 CNAME 解析即可</li></ul>
+<hr>
+<p>以上就是搭建的全部过程。如果你也在折腾自己的小站，欢迎和我交流！✌️</p>
+    </div>
+    <nav class="post-pager" aria-label="上一篇/下一篇"><a class="pager-prev" href="2026-08-08-welcome.html"><span class="pager-label">← 上一篇</span>欢迎来到我的博客</a><span></span></nav>
+  </div>
+</article>  </main>
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p class="footer-brand">LunaBright<span class="nav-logo-dot">.</span></p>
+      <p class="footer-links">
+        <a href="../../index.html">首页</a>
+        <a href="../../blog/index.html">博客</a>
+        <a href="https://github.com/LunaBright" target="_blank" rel="noopener">GitHub</a>
+      </p>
+      <p class="footer-note">© <span id="year"></span> LunaBright · 由 GitHub Pages 免费托管</p>
+    </div>
+  </footer>
+  <button class="to-top" id="to-top" aria-label="回到顶部">
+    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+  </button>
+  <script src="../../assets/js/main.js"></script>
+</body>
+</html>
+

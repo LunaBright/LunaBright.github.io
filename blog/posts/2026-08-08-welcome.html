@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>欢迎来到我的博客 · LunaBright</title>
+  <meta name="description" content="这是我博客的第一篇文章，聊聊这里会写些什么，以及这个网站是怎么运转的。">
+  <meta property="og:title" content="欢迎来到我的博客 · LunaBright">
+  <meta property="og:description" content="这是我博客的第一篇文章，聊聊这里会写些什么，以及这个网站是怎么运转的。">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="alternate" type="application/atom+xml" title="订阅本站" href="../../feed.xml">
+  <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#content">跳到主要内容</a>
+  <header class="site-nav">
+    <nav class="nav-inner" aria-label="主导航">
+      <a class="nav-logo" href="../../index.html">LunaBright<span class="nav-logo-dot">.</span></a>
+      <button class="nav-toggle" aria-label="打开菜单" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="nav-links">
+        <a class="nav-link" href="../../index.html">首页</a>
+        <a class="nav-link" href="../../index.html#about">关于</a>
+        <a class="nav-link active" href="../../blog/index.html">博客</a>
+        <a class="nav-link" href="../../index.html#contact">联系</a>
+        <a class="nav-link nav-icon" href="https://github.com/LunaBright" target="_blank" rel="noopener" aria-label="GitHub 主页">
+          <svg viewBox="0 0 16 16" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+        </a>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换浅色/深色主题"></button>
+      </div>
+    </nav>
+  </header>
+  <main id="content">
+
+<article class="post">
+  <div class="container container-narrow">
+    <header class="post-header">
+      <p class="page-eyebrow"><a href="../index.html">← 返回博客</a></p>
+      <h1 class="post-title">欢迎来到我的博客</h1>
+      <div class="post-meta">
+        <time datetime="2026-08-08">2026 年 8 月 8 日</time>
+        <span>·</span>
+        <span>约 1 分钟阅读</span>
+        <span class="tag">随笔</span><span class="tag">建站</span>
+      </div>
+    </header>
+    <div class="prose">
+<p>欢迎来到我的小站！🎉</p>
+<p>这是我搭建个人主页后写下的第一篇文章。之后我会在这里分享：</p>
+<ul><li>技术笔记：Python、Web 开发、Git 等</li><li>学习心得：读书、课程、项目复盘</li><li>生活记录：一些值得记住的瞬间</li></ul>
+<h2>这个网站是怎么工作的？</h2>
+<p>这个站点是<strong>纯静态网站</strong>，通过 <code>build.py</code> 把 Markdown 文章转换成 HTML 页面，再托管在 <strong>GitHub Pages</strong> 上，完全免费、不需要服务器。</p>
+<blockquote><p>如果你对搭建过程感兴趣，可以看看我写的《用 GitHub Pages 搭建个人主页》。</p></blockquote>
+<h2>如何发布一篇新文章？</h2>
+<p>步骤非常简单：</p>
+<ol><li>在 <code>posts/</code> 目录下新建一个 Markdown 文件</li><li>在文件开头写上标题、日期和标签</li><li>运行 <code>python build.py</code> 生成页面</li><li>用 <code>git push</code> 推送到 GitHub</li></ol>
+<p>代码块长这样：</p>
+<pre><code class="lang-bash">python build.py</code></pre>
+<p>写起来只需要会 Markdown 就行，非常轻量。我们下一篇见！👋</p>
+    </div>
+    <nav class="post-pager" aria-label="上一篇/下一篇"><span></span><a class="pager-next" href="2026-08-08-github-pages-guide.html"><span class="pager-label">下一篇 →</span>用 GitHub Pages 搭建个人主页</a></nav>
+  </div>
+</article>  </main>
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p class="footer-brand">LunaBright<span class="nav-logo-dot">.</span></p>
+      <p class="footer-links">
+        <a href="../../index.html">首页</a>
+        <a href="../../blog/index.html">博客</a>
+        <a href="https://github.com/LunaBright" target="_blank" rel="noopener">GitHub</a>
+      </p>
+      <p class="footer-note">© <span id="year"></span> LunaBright · 由 GitHub Pages 免费托管</p>
+    </div>
+  </footer>
+  <button class="to-top" id="to-top" aria-label="回到顶部">
+    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+  </button>
+  <script src="../../assets/js/main.js"></script>
+</body>
+</html>
+
