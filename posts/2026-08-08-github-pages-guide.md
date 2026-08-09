@@ -1,6 +1,7 @@
 ---
 title: 用 GitHub Pages 搭建个人主页
 date: 2026-08-08
+category: 技术
 tags: [教程, GitHub, 建站]
 excerpt: 从零开始、免费托管个人主页的完整指南：创建仓库、生成站点、启用 Pages 三步搞定。
 ---
@@ -55,4 +56,3 @@ python build.py
 ---
 
 以上就是搭建的全部过程。如果你也在折腾自己的小站，欢迎和我交流！✌️
-

@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>欢迎来到我的博客 · LunaBright</title>
-  <meta name="description" content="这是我博客的第一篇文章，聊聊这里会写些什么，以及这个网站是怎么运转的。">
-  <meta property="og:title" content="欢迎来到我的博客 · LunaBright">
-  <meta property="og:description" content="这是我博客的第一篇文章，聊聊这里会写些什么，以及这个网站是怎么运转的。">
+  <title>博客功能演示：表格、公式与图片排版 · LunaBright</title>
+  <meta name="description" content="这篇文章演示本站支持的高级写作语法：Markdown 表格、LaTeX 公式、带尺寸/对齐/图注的图片，以及分类与标签的用法。">
+  <meta property="og:title" content="博客功能演示：表格、公式与图片排版 · LunaBright">
+  <meta property="og:description" content="这篇文章演示本站支持的高级写作语法：Markdown 表格、LaTeX 公式、带尺寸/对齐/图注的图片，以及分类与标签的用法。">
   <meta property="og:type" content="website">
   <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
   <link rel="alternate" type="application/atom+xml" title="订阅本站" href="../../feed.xml">
@@ -43,30 +43,38 @@
     
     <header class="post-header">
       <p class="page-eyebrow"><a href="../index.html">← 返回博客</a></p>
-      <h1 class="post-title">欢迎来到我的博客</h1>
+      <h1 class="post-title">博客功能演示：表格、公式与图片排版</h1>
       <div class="post-meta">
-        <span class="post-category">随笔</span>
-        <time datetime="2026-08-08">2026 年 8 月 8 日</time>
+        <span class="post-category">技术</span>
+        <time datetime="2026-08-09">2026 年 8 月 9 日</time>
         <span>·</span>
         <span>约 1 分钟阅读</span>
-        <span class="tag">随笔</span><span class="tag">建站</span>
+        <span class="tag">Markdown</span><span class="tag">功能</span>
       </div>
     </header>
     <div class="prose">
-<p>欢迎来到我的小站！🎉</p>
-<p>这是我搭建个人主页后写下的第一篇文章。之后我会在这里分享：</p>
-<ul><li>技术笔记：Python、Web 开发、Git 等</li><li>学习心得：读书、课程、项目复盘</li><li>生活记录：一些值得记住的瞬间</li></ul>
-<h2>这个网站是怎么工作的？</h2>
-<p>这个站点是<strong>纯静态网站</strong>，通过 <code>build.py</code> 把 Markdown 文章转换成 HTML 页面，再托管在 <strong>GitHub Pages</strong> 上，完全免费、不需要服务器。</p>
-<blockquote><p>如果你对搭建过程感兴趣，可以看看我写的《用 GitHub Pages 搭建个人主页》。</p></blockquote>
-<h2>如何发布一篇新文章？</h2>
-<p>步骤非常简单：</p>
-<ol><li>在 <code>posts/</code> 目录下新建一个 Markdown 文件</li><li>在文件开头写上标题、日期和标签</li><li>运行 <code>python build.py</code> 生成页面</li><li>用 <code>git push</code> 推送到 GitHub</li></ol>
-<p>代码块长这样：</p>
-<pre><code class="lang-bash">python build.py</code></pre>
-<p>写起来只需要会 Markdown 就行，非常轻量。我们下一篇见！👋</p>
+<p>这篇文章用来演示本站博客支持的各种写作语法，方便你在后台写文章时直接参考。</p>
+<h2>Markdown 表格</h2>
+<p>表格用竖线语法书写，第一行是表头，第二行是分隔线：</p>
+<div class="table-wrap"><table><thead><tr><th style="text-align:left">功能</th><th style="text-align:center">语法</th><th style="text-align:right">示例</th></tr></thead><tbody><tr><td style="text-align:left">表格</td><td style="text-align:center"><code>| 列 | 列 |</code></td><td style="text-align:right">本表格</td></tr><tr><td style="text-align:left">公式</td><td style="text-align:center"><code>$...$</code></td><td style="text-align:right">$E=mc^2$</td></tr><tr><td style="text-align:left">图片</td><td style="text-align:center"><code><img src="地址" alt="说明" loading="lazy"></code></td><td style="text-align:right">见下文</td></tr><tr><td style="text-align:left">粗体</td><td style="text-align:center"><code><strong>文字</strong></code></td><td style="text-align:right"><strong>加粗</strong></td></tr></tbody></table></div>
+<h2>LaTeX 公式</h2>
+<p>行内公式用单个美元符号包裹：质能方程 $E=mc^2$，勾股定理 $a^2 + b^2 = c^2$。</p>
+<p>块级公式用两个美元符号：</p>
+<div class="prose-math">$$
+\int_{-\infty}^{+\infty} e^{-x^2}\,dx = \sqrt{\pi}
+$$</div>
+<h2>图片排版</h2>
+<p>普通图片直接写：</p>
+<img src="/assets/images/background.svg" alt="默认背景图" loading="lazy">
+<p>需要控制大小、对齐和添加图注时，用扩展语法（顺序可调，用逗号分隔）：</p>
+<figure class="align-center"><img src="/assets/images/background.svg" alt="默认背景图" loading="lazy" style="width:70%"><figcaption>这是本站默认背景图，可在后台「站点设置」中更换</figcaption></figure>
+<p>也可以左对齐、缩小显示：</p>
+<figure class="align-left"><img src="/assets/images/background.svg" alt="默认背景图" loading="lazy" style="width:45%"><figcaption>左对齐示例</figcaption></figure>
+<h2>分类与标签</h2>
+<p>每篇文章可以设置一个<strong>分类</strong>（默认提供：技术 / 生活 / 随笔）和任意多个<strong>标签</strong>。博客页顶部可以按分类、标签筛选，也可以用右上角的搜索框搜索标题和正文。</p>
+<blockquote><p>提示：图片尺寸支持百分比或像素值，例如 <code>width:320px</code>；对齐支持 <code>left</code> / <code>center</code> / <code>right</code>。</p></blockquote>
     </div>
-    <nav class="post-pager" aria-label="上一篇 / 下一篇"><span></span><a class="pager-next" href="2026-08-08-github-pages-guide.html"><span class="pager-label">下一篇 →</span>用 GitHub Pages 搭建个人主页</a></nav>
+    <nav class="post-pager" aria-label="上一篇 / 下一篇"><a class="pager-prev" href="2026-08-08-github-pages-guide.html"><span class="pager-label">← 上一篇</span>用 GitHub Pages 搭建个人主页</a><span></span></nav>
   </div>
 </article><section class="comments" id="comments">
   <div class="container container-narrow">

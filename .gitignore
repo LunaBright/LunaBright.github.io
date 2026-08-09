@@ -1,5 +1,6 @@
 __pycache__/
 *.pyc
 .preview/
+_site/
 .DS_Store
 Thumbs.db

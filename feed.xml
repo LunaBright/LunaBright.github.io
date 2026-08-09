@@ -4,14 +4,44 @@
   <subtitle>LunaBright 的个人主页：技术笔记、学习心得与生活记录</subtitle>
   <link href="https://lunabright.github.io/feed.xml" rel="self"/>
   <link href="https://lunabright.github.io/" rel="alternate"/>
-  <updated>2026-08-08T00:00:00+08:00</updated>
+  <updated>2026-08-09T00:00:00+08:00</updated>
   <author><name>LunaBright</name><email>2154626568@qq.com</email></author>
   <id>https://lunabright.github.io/</id>
+  <entry>
+    <title>博客功能演示：表格、公式与图片排版</title>
+    <link href="https://lunabright.github.io/blog/posts/2026-08-09-blog-features.html"/>
+    <id>https://lunabright.github.io/blog/posts/2026-08-09-blog-features.html</id>
+    <updated>2026-08-09T00:00:00+08:00</updated>
+    <category term="技术"/>
+    <author><name>LunaBright</name></author>
+    <summary>这篇文章演示本站支持的高级写作语法：Markdown 表格、LaTeX 公式、带尺寸/对齐/图注的图片，以及分类与标签的用法。</summary>
+    <content type="html">&lt;p&gt;这篇文章用来演示本站博客支持的各种写作语法，方便你在后台写文章时直接参考。&lt;/p&gt;
+&lt;h2&gt;Markdown 表格&lt;/h2&gt;
+&lt;p&gt;表格用竖线语法书写，第一行是表头，第二行是分隔线：&lt;/p&gt;
+&lt;div class="table-wrap"&gt;&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th style="text-align:left"&gt;功能&lt;/th&gt;&lt;th style="text-align:center"&gt;语法&lt;/th&gt;&lt;th style="text-align:right"&gt;示例&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td style="text-align:left"&gt;表格&lt;/td&gt;&lt;td style="text-align:center"&gt;&lt;code&gt;| 列 | 列 |&lt;/code&gt;&lt;/td&gt;&lt;td style="text-align:right"&gt;本表格&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style="text-align:left"&gt;公式&lt;/td&gt;&lt;td style="text-align:center"&gt;&lt;code&gt;$...$&lt;/code&gt;&lt;/td&gt;&lt;td style="text-align:right"&gt;$E=mc^2$&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style="text-align:left"&gt;图片&lt;/td&gt;&lt;td style="text-align:center"&gt;&lt;code&gt;&lt;img src="地址" alt="说明" loading="lazy"&gt;&lt;/code&gt;&lt;/td&gt;&lt;td style="text-align:right"&gt;见下文&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style="text-align:left"&gt;粗体&lt;/td&gt;&lt;td style="text-align:center"&gt;&lt;code&gt;&lt;strong&gt;文字&lt;/strong&gt;&lt;/code&gt;&lt;/td&gt;&lt;td style="text-align:right"&gt;&lt;strong&gt;加粗&lt;/strong&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;
+&lt;h2&gt;LaTeX 公式&lt;/h2&gt;
+&lt;p&gt;行内公式用单个美元符号包裹：质能方程 $E=mc^2$，勾股定理 $a^2 + b^2 = c^2$。&lt;/p&gt;
+&lt;p&gt;块级公式用两个美元符号：&lt;/p&gt;
+&lt;div class="prose-math"&gt;$$
+\int_{-\infty}^{+\infty} e^{-x^2}\,dx = \sqrt{\pi}
+$$&lt;/div&gt;
+&lt;h2&gt;图片排版&lt;/h2&gt;
+&lt;p&gt;普通图片直接写：&lt;/p&gt;
+&lt;img src="/assets/images/background.svg" alt="默认背景图" loading="lazy"&gt;
+&lt;p&gt;需要控制大小、对齐和添加图注时，用扩展语法（顺序可调，用逗号分隔）：&lt;/p&gt;
+&lt;figure class="align-center"&gt;&lt;img src="/assets/images/background.svg" alt="默认背景图" loading="lazy" style="width:70%"&gt;&lt;figcaption&gt;这是本站默认背景图，可在后台「站点设置」中更换&lt;/figcaption&gt;&lt;/figure&gt;
+&lt;p&gt;也可以左对齐、缩小显示：&lt;/p&gt;
+&lt;figure class="align-left"&gt;&lt;img src="/assets/images/background.svg" alt="默认背景图" loading="lazy" style="width:45%"&gt;&lt;figcaption&gt;左对齐示例&lt;/figcaption&gt;&lt;/figure&gt;
+&lt;h2&gt;分类与标签&lt;/h2&gt;
+&lt;p&gt;每篇文章可以设置一个&lt;strong&gt;分类&lt;/strong&gt;（默认提供：技术 / 生活 / 随笔）和任意多个&lt;strong&gt;标签&lt;/strong&gt;。博客页顶部可以按分类、标签筛选，也可以用右上角的搜索框搜索标题和正文。&lt;/p&gt;
+&lt;blockquote&gt;&lt;p&gt;提示：图片尺寸支持百分比或像素值，例如 &lt;code&gt;width:320px&lt;/code&gt;；对齐支持 &lt;code&gt;left&lt;/code&gt; / &lt;code&gt;center&lt;/code&gt; / &lt;code&gt;right&lt;/code&gt;。&lt;/p&gt;&lt;/blockquote&gt;</content>
+  </entry>
   <entry>
     <title>用 GitHub Pages 搭建个人主页</title>
     <link href="https://lunabright.github.io/blog/posts/2026-08-08-github-pages-guide.html"/>
     <id>https://lunabright.github.io/blog/posts/2026-08-08-github-pages-guide.html</id>
     <updated>2026-08-08T00:00:00+08:00</updated>
+    <category term="技术"/>
     <author><name>LunaBright</name></author>
     <summary>从零开始、免费托管个人主页的完整指南：创建仓库、生成站点、启用 Pages 三步搞定。</summary>
     <content type="html">&lt;p&gt;GitHub Pages 是 GitHub 提供的&lt;strong&gt;免费静态网站托管服务&lt;/strong&gt;。这篇文章记录我搭建这个主页的完整过程，也方便你参考。&lt;/p&gt;
@@ -44,6 +74,7 @@
     <link href="https://lunabright.github.io/blog/posts/2026-08-08-welcome.html"/>
     <id>https://lunabright.github.io/blog/posts/2026-08-08-welcome.html</id>
     <updated>2026-08-08T00:00:00+08:00</updated>
+    <category term="随笔"/>
     <author><name>LunaBright</name></author>
     <summary>这是我博客的第一篇文章，聊聊这里会写些什么，以及这个网站是怎么运转的。</summary>
     <content type="html">&lt;p&gt;欢迎来到我的小站！🎉&lt;/p&gt;

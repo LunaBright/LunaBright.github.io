@@ -1,0 +1,150 @@
+# Pages CMS 配置（https://pagescms.org）
+# 用 GitHub 账号登录 app.pagescms.org 后选择本仓库即可在网页上编辑文章与站点设置。
+
+media:
+  - name: images
+    label: 图片库
+    input: media/images
+    output: /media/images
+    rename: safe
+    extensions: [png, jpg, jpeg, gif, webp, svg]
+    categories: [image]
+
+content:
+  - name: posts
+    label: 博客文章
+    type: collection
+    path: posts
+    format: yaml-frontmatter
+    filename: "{year}-{month}-{day}-{primary}.md"
+    view:
+      fields: [title, category, date, tags, draft]
+      primary: title
+      sort: [date, title]
+      search: [title, tags, category, excerpt]
+      default:
+        sort: date
+        order: desc
+    fields:
+      - name: title
+        label: 标题
+        type: string
+        required: true
+      - name: category
+        label: 分类
+        type: select
+        options:
+          - { label: 技术, value: 技术 }
+          - { label: 生活, value: 生活 }
+          - { label: 随笔, value: 随笔 }
+      - name: tags
+        label: 标签（回车添加）
+        type: string
+        list: true
+      - name: date
+        label: 发布日期
+        type: date
+      - name: cover
+        label: 封面图
+        type: image
+        media: images
+        description: 可选。会显示在文章列表和文章页顶部。
+      - name: excerpt
+        label: 摘要
+        type: text
+        description: 可选。不填则自动截取正文开头作为摘要。
+      - name: draft
+        label: 草稿（勾选后不发布）
+        type: boolean
+        default: false
+      - name: body
+        label: 正文
+        type: rich-text
+        required: true
+        media: images
+        description: 支持 Markdown。图片可粘贴上传；排版用扩展语法：![说明](图片地址 "width:60%,align:center,figcaption:图注文字")。公式用 LaTeX：$行内公式$ 或 $$块级公式$$。表格用 Markdown 表格语法。
+
+  - name: settings
+    label: 站点设置
+    type: file
+    path: data/site.json
+    format: json
+    fields:
+      - name: site_name
+        label: 站点名称
+        type: string
+      - name: site_url
+        label: 站点地址
+        type: string
+      - name: description
+        label: 站点描述
+        type: text
+      - name: author
+        label: 作者名
+        type: string
+      - name: email
+        label: 邮箱
+        type: string
+      - name: github
+        label: GitHub 主页
+        type: string
+      - name: avatar
+        label: 头像（可直接上传新图）
+        type: image
+        media: images
+      - name: background
+        label: 背景图（可直接上传新图）
+        type: image
+        media: images
+      - name: tagline
+        label: 一句话介绍
+        type: string
+      - name: hero_desc
+        label: 首页大段介绍
+        type: text
+      - name: about
+        label: 关于我（每项一段文字）
+        type: string
+        list: true
+      - name: skills
+        label: 技能 / 兴趣标签
+        type: string
+        list: true
+      - name: contact
+        label: 联系方式
+        type: object
+        list: true
+        fields:
+          - name: label
+            label: 名称
+            type: string
+          - name: value
+            label: 显示文字
+            type: string
+          - name: url
+            label: 链接
+            type: string
+      - name: home_recent
+        label: 首页展示文章数
+        type: number
+      - name: giscus
+        label: 评论区（giscus）
+        type: object
+        fields:
+          - name: repo
+            label: 仓库（用户名/仓库名）
+            type: string
+          - name: repo_id
+            label: repo_id
+            type: string
+          - name: category
+            label: 讨论分类
+            type: string
+          - name: category_id
+            label: category_id
+            type: string
+
+actions:
+  - name: deploy
+    label: 重新构建并部署
+    workflow: deploy.yml

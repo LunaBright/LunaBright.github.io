@@ -26,6 +26,7 @@
       root.setAttribute("data-theme", theme);
       try { localStorage.setItem("theme", theme); } catch (e) { /* ignore */ }
       renderIcon();
+      syncGiscusTheme();
     });
   }
 
@@ -73,5 +74,39 @@
   // ---------- 页脚年份 ----------
   var year = document.getElementById("year");
   if (year) { year.textContent = String(new Date().getFullYear()); }
-})();
 
+  // ---------- KaTeX 公式渲染 ----------
+  function renderMath() {
+    if (window.renderMathInElement) {
+      var prose = document.querySelector(".prose");
+      if (prose) {
+        renderMathInElement(prose, {
+          delimiters: [
+            { left: "$$", right: "$$", display: true },
+            { left: "$", right: "$", display: false },
+            { left: "\\(", right: "\\)", display: false },
+            { left: "\\[", right: "\\]", display: true }
+          ],
+          throwOnError: false
+        });
+      }
+    }
+  }
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", renderMath);
+  } else {
+    renderMath();
+  }
+
+  // ---------- 评论区主题同步 ----------
+  function syncGiscusTheme() {
+    var frame = document.querySelector("iframe.giscus-frame");
+    if (frame && frame.contentWindow) {
+      frame.contentWindow.postMessage(
+        { giscus: { setConfig: { theme: theme === "dark" ? "dark" : "light" } } },
+        "https://giscus.app"
+      );
+    }
+  }
+  window.addEventListener("load", syncGiscusTheme);
+})();

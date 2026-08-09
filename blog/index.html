@@ -4,15 +4,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>博客 · LunaBright</title>
-  <meta name="description" content="LunaBright 的博客文章列表">
+  <meta name="description" content="LunaBright 的个人主页：技术笔记、学习心得与生活记录：博客文章列表">
   <meta property="og:title" content="博客 · LunaBright">
-  <meta property="og:description" content="LunaBright 的博客文章列表">
+  <meta property="og:description" content="LunaBright 的个人主页：技术笔记、学习心得与生活记录：博客文章列表">
   <meta property="og:type" content="website">
   <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
   <link rel="alternate" type="application/atom+xml" title="订阅本站" href="../feed.xml">
   <link rel="stylesheet" href="../assets/css/style.css">
+  
 </head>
 <body>
+  <div class="site-bg" role="presentation" style="background-image:url('/assets/images/background.svg')"></div>
   <a class="skip-link" href="#content">跳到主要内容</a>
   <header class="site-nav">
     <nav class="nav-inner" aria-label="主导航">
@@ -28,43 +30,87 @@
         <a class="nav-link nav-icon" href="https://github.com/LunaBright" target="_blank" rel="noopener" aria-label="GitHub 主页">
           <svg viewBox="0 0 16 16" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
         </a>
+        <a class="nav-link admin-link" href="https://app.pagescms.org/LunaBright/LunaBright.github.io" target="_blank" rel="noopener" title="打开后台管理">管理</a>
         <button class="theme-toggle" id="theme-toggle" aria-label="切换浅色/深色主题"></button>
       </div>
     </nav>
   </header>
   <main id="content">
-
   <section class="page-hero">
     <div class="container">
       <p class="page-eyebrow reveal">Blog</p>
       <h1 class="page-title reveal">博客文章</h1>
-      <p class="page-desc reveal">技术笔记、学习心得与生活记录，全部内容按时间倒序排列。</p>
+      <p class="page-desc reveal">技术笔记、学习心得与生活记录。支持按分类、标签筛选，也可以搜索标题和正文。</p>
     </div>
   </section>
 
   <section class="section">
     <div class="container">
-      <div class="post-list">
-        <article class="post-list-item reveal">
+      <div class="blog-toolbar reveal">
+        <div class="search-box">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+          <input type="search" id="blog-search" placeholder="搜索文章标题或内容…" autocomplete="off">
+          <button class="search-clear" id="search-clear" type="button" aria-label="清空搜索">×</button>
+        </div>
+        <div class="filter-group">
+          <span class="filter-label">分类</span>
+          <div class="filter-chips" id="category-filters">
+            <button class="filter-chip active" type="button" data-filter="category" data-value="">全部</button>
+<button class="filter-chip" type="button" data-filter="category" data-value="技术">技术</button>
+<button class="filter-chip" type="button" data-filter="category" data-value="随笔">随笔</button>
+          </div>
+        </div>
+        <div class="filter-group">
+          <span class="filter-label">标签</span>
+          <div class="filter-chips" id="tag-filters">
+            <button class="filter-chip active" type="button" data-filter="tag" data-value="">全部</button>
+<button class="filter-chip" type="button" data-filter="tag" data-value="Markdown">Markdown</button>
+<button class="filter-chip" type="button" data-filter="tag" data-value="功能">功能</button>
+<button class="filter-chip" type="button" data-filter="tag" data-value="教程">教程</button>
+<button class="filter-chip" type="button" data-filter="tag" data-value="GitHub">GitHub</button>
+<button class="filter-chip" type="button" data-filter="tag" data-value="建站">建站</button>
+<button class="filter-chip" type="button" data-filter="tag" data-value="随笔">随笔</button>
+          </div>
+        </div>
+        <p class="search-status" id="search-status"></p>
+      </div>
+      <div class="post-list" id="post-list">
+        <article class="post-list-item reveal" data-category="技术" data-tags="Markdown,功能" data-title="博客功能演示：表格、公式与图片排版" data-excerpt="这篇文章演示本站支持的高级写作语法：Markdown 表格、LaTeX 公式、带尺寸/对齐/图注的图片，以及分类与标签的用法。">
+  <time class="post-list-date" datetime="2026-08-09">2026-08-09</time>
+  <div class="post-list-main">
+    <h2 class="post-list-title"><a href="../blog/posts/2026-08-09-blog-features.html">博客功能演示：表格、公式与图片排版</a></h2>
+    <p class="post-list-meta"><span class="post-list-category">技术</span><span>路</span><span>约 1 分钟</span></p>
+    <p class="post-list-excerpt">这篇文章演示本站支持的高级写作语法：Markdown 表格、LaTeX 公式、带尺寸/对齐/图注的图片，以及分类与标签的用法。</p>
+    <div class="post-list-tags"><span class="tag">Markdown</span><span class="tag">功能</span></div>
+  </div>
+</article>
+<article class="post-list-item reveal" data-category="技术" data-tags="教程,GitHub,建站" data-title="用 GitHub Pages 搭建个人主页" data-excerpt="从零开始、免费托管个人主页的完整指南：创建仓库、生成站点、启用 Pages 三步搞定。">
   <time class="post-list-date" datetime="2026-08-08">2026-08-08</time>
   <div class="post-list-main">
     <h2 class="post-list-title"><a href="../blog/posts/2026-08-08-github-pages-guide.html">用 GitHub Pages 搭建个人主页</a></h2>
-    <p class="post-list-excerpt">从零开始、免费托管个人主页的完整指南：创建仓库、生成站点、启用 Pages 三步搞定。…</p>
+    <p class="post-list-meta"><span class="post-list-category">技术</span><span>路</span><span>约 1 分钟</span></p>
+    <p class="post-list-excerpt">从零开始、免费托管个人主页的完整指南：创建仓库、生成站点、启用 Pages 三步搞定。</p>
     <div class="post-list-tags"><span class="tag">教程</span><span class="tag">GitHub</span><span class="tag">建站</span></div>
   </div>
 </article>
-<article class="post-list-item reveal">
+<article class="post-list-item reveal" data-category="随笔" data-tags="随笔,建站" data-title="欢迎来到我的博客" data-excerpt="这是我博客的第一篇文章，聊聊这里会写些什么，以及这个网站是怎么运转的。">
   <time class="post-list-date" datetime="2026-08-08">2026-08-08</time>
   <div class="post-list-main">
     <h2 class="post-list-title"><a href="../blog/posts/2026-08-08-welcome.html">欢迎来到我的博客</a></h2>
-    <p class="post-list-excerpt">这是我博客的第一篇文章，聊聊这里会写些什么，以及这个网站是怎么运转的。…</p>
+    <p class="post-list-meta"><span class="post-list-category">随笔</span><span>路</span><span>约 1 分钟</span></p>
+    <p class="post-list-excerpt">这是我博客的第一篇文章，聊聊这里会写些什么，以及这个网站是怎么运转的。</p>
     <div class="post-list-tags"><span class="tag">随笔</span><span class="tag">建站</span></div>
   </div>
 </article>
       </div>
+      <div class="search-empty" id="search-empty" hidden>
+        <p>没有找到符合条件的文章，换个关键词或筛选条件试试？</p>
+      </div>
     </div>
   </section>
 
+  <script type="application/json" id="search-index">[{"title": "博客功能演示：表格、公式与图片排版", "url": "posts/2026-08-09-blog-features.html", "date": "2026-08-09", "category": "技术", "tags": ["Markdown", "功能"], "excerpt": "这篇文章演示本站支持的高级写作语法：Markdown 表格、LaTeX 公式、带尺寸/对齐/图注的图片，以及分类与标签的用法。", "content": "这篇文章用来演示本站博客支持的各种写作语法，方便你在后台写文章时直接参考。 Markdown 表格 表格用竖线语法书写，第一行是表头，第二行是分隔线： 功能 语法 示例 表格 | 列 | 列 | 本表格 公式 $...$ $E=mc^2$ 图片 见下文 粗体 文字 加粗 LaTeX 公式 行内公式用单个美元符号包裹：质能方程 $E=mc^2$，勾股定理 $a^2 + b^2 = c^2$。 块级公式用两个美元符号： $$ \\int_{-\\infty}^{+\\infty} e^{-x^2}\\,dx = \\sqrt{\\pi} $$ 图片排版 普通图片直接写： 需要控制大小、对齐和添加图注时，用扩展语法（顺序可调，用逗号分隔）： 这是本站默认背景图，可在后台「站点设置」中更换 也可以左对齐、缩小显示： 左对齐示例 分类与标签 每篇文章可以设置一个 分类 （默认提供：技术 / 生活 / 随笔）和任意多个 标签 。博客页顶部可以按分类、标签筛选，也可以用右上角的搜索框搜索标题和正文。 提示：图片尺寸支持百分比或像素值，例如 width:320px ；对齐支持 left / center / right 。"}, {"title": "用 GitHub Pages 搭建个人主页", "url": "posts/2026-08-08-github-pages-guide.html", "date": "2026-08-08", "category": "技术", "tags": ["教程", "GitHub", "建站"], "excerpt": "从零开始、免费托管个人主页的完整指南：创建仓库、生成站点、启用 Pages 三步搞定。", "content": "GitHub Pages 是 GitHub 提供的 免费静态网站托管服务 。这篇文章记录我搭建这个主页的完整过程，也方便你参考。 第一步：创建仓库 个人主页的仓库名必须和你的 GitHub 用户名一致，格式是 用户名.github.io 。 # 例如用户名为 LunaBright # 仓库名就是 LunaBright.github.io 第二步：准备网站文件 本站点的结构如下： . ├── index.html # 首页（由 build.py 自动更新“最新文章”） ├── blog/ # 博客列表与文章页（自动生成） ├── posts/ # 文章源文件，写 Markdown 的地方 ├── pages/ # 页面内容模板 ├── templates/ # 页头 / 页脚共享模板 ├── assets/ # 样式、脚本、图标 └── build.py # 站点生成器 写完文章后，运行生成器即可： python build.py 第三步：启用 GitHub Pages 进入仓库的 Settings → Pages Source 选择 Deploy from a branch Branch 选择 main ，目录选择 / (root) 点击 Save ，稍等一分钟即可访问 访问地址就是 https://用户名.github.io 。 几个实用提示 仓库里的 .nojekyll 空文件可以跳过 Jekyll 构建，纯静态页面部署更快 文章更新后记得先运行 python build.py 再推送 想换域名？在仓库 Settings 的 Custom domain 里配置，并添加一条 CNAME 解析即可 以上就是搭建的全部过程。如果你也在折腾自己的小站，欢迎和我交流！✌️"}, {"title": "欢迎来到我的博客", "url": "posts/2026-08-08-welcome.html", "date": "2026-08-08", "category": "随笔", "tags": ["随笔", "建站"], "excerpt": "这是我博客的第一篇文章，聊聊这里会写些什么，以及这个网站是怎么运转的。", "content": "欢迎来到我的小站！🎉 这是我搭建个人主页后写下的第一篇文章。之后我会在这里分享： 技术笔记：Python、Web 开发、Git 等 学习心得：读书、课程、项目复盘 生活记录：一些值得记住的瞬间 这个网站是怎么工作的？ 这个站点是 纯静态网站 ，通过 build.py 把 Markdown 文章转换成 HTML 页面，再托管在 GitHub Pages 上，完全免费、不需要服务器。 如果你对搭建过程感兴趣，可以看看我写的《用 GitHub Pages 搭建个人主页》。 如何发布一篇新文章？ 步骤非常简单： 在 posts/ 目录下新建一个 Markdown 文件 在文件开头写上标题、日期和标签 运行 python build.py 生成页面 用 git push 推送到 GitHub 代码块长这样： python build.py 写起来只需要会 Markdown 就行，非常轻量。我们下一篇见！👋"}]</script>
+  <script src="../assets/js/search.js" defer></script>
   </main>
   <footer class="site-footer">
     <div class="footer-inner">
@@ -83,4 +129,3 @@
   <script src="../assets/js/main.js"></script>
 </body>
 </html>
-

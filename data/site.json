@@ -1,0 +1,45 @@
+{
+  "site_name": "LunaBright",
+  "site_url": "https://lunabright.github.io",
+  "description": "LunaBright 的个人主页：技术笔记、学习心得与生活记录",
+  "author": "LunaBright",
+  "email": "2154626568@qq.com",
+  "github": "https://github.com/LunaBright",
+  "avatar": "/assets/images/avatar.svg",
+  "background": "/assets/images/background.svg",
+  "tagline": "程序员 · 学习者 · 生活记录者",
+  "hero_desc": "这里是我在互联网上的一个小家，用来展示自己、沉淀知识、记录生活。欢迎常来逛逛。",
+  "about": [
+    "你好！我是 <strong>LunaBright</strong>，Luna 意为月亮，Bright 意为明亮。一名热爱技术、喜欢折腾的开发者。",
+    "我关注 Web 开发、Python 与自动化工具，也喜欢把学到的东西整理成文字，和朋友分享。这个网站就是我的数字花园，我会在这里持续记录和生长。"
+  ],
+  "skills": [
+    "Python",
+    "HTML / CSS",
+    "JavaScript",
+    "Git & GitHub",
+    "自动化脚本",
+    "写作",
+    "摄影",
+    "读书"
+  ],
+  "contact": [
+    {
+      "label": "邮箱",
+      "value": "2154626568@qq.com",
+      "url": "mailto:2154626568@qq.com"
+    },
+    {
+      "label": "GitHub",
+      "value": "@LunaBright",
+      "url": "https://github.com/LunaBright"
+    }
+  ],
+  "home_recent": 3,
+  "giscus": {
+    "repo": "LunaBright/LunaBright.github.io",
+    "repo_id": "",
+    "category": "Announcements",
+    "category_id": ""
+  }
+}

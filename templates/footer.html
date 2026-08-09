@@ -1,13 +1,13 @@
   </main>
   <footer class="site-footer">
     <div class="footer-inner">
-      <p class="footer-brand">LunaBright<span class="nav-logo-dot">.</span></p>
+      <p class="footer-brand">{{SITE_NAME}}<span class="nav-logo-dot">.</span></p>
       <p class="footer-links">
         <a href="{{BASE}}index.html">首页</a>
         <a href="{{BASE}}blog/index.html">博客</a>
-        <a href="https://github.com/LunaBright" target="_blank" rel="noopener">GitHub</a>
+        <a href="{{GITHUB_URL}}" target="_blank" rel="noopener">GitHub</a>
       </p>
-      <p class="footer-note">© <span id="year"></span> LunaBright · 由 GitHub Pages 免费托管</p>
+      <p class="footer-note">© <span id="year"></span> {{SITE_NAME}} · 由 GitHub Pages 免费托管</p>
     </div>
   </footer>
   <button class="to-top" id="to-top" aria-label="回到顶部">
@@ -16,4 +16,3 @@
   <script src="{{BASE}}assets/js/main.js"></script>
 </body>
 </html>
-
