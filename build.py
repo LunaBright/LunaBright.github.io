@@ -140,6 +140,15 @@ def safe_url(url):
     return url
 
 
+def safe_img_url(url):
+    """图片 src 比普通链接宽松：允许 data:image 内嵌图（后台粘贴图片失败时的兜底）。"""
+    url = url.strip()
+    low = url.lower()
+    if low.startswith("data:image/") and ";" in low and "," in low:
+        return url
+    return safe_url(url)
+
+
 def protect_math(text):
     """把 $...$ / $$...$$ 先替换成占位符，避免被粗体/斜体规则破坏，最后还原。"""
     tokens = []
@@ -172,7 +181,7 @@ def parse_img_options(title):
 
 def img_html(m):
     alt = m.group(1)
-    src = safe_url(m.group(2))
+    src = safe_img_url(m.group(2))
     opts = parse_img_options(m.group(3) or "")
     width = opts.get("width")
     align = opts.get("align", "center" if opts else "")
@@ -505,7 +514,7 @@ def cover_html(post, base):
         return ""
     return (
         '<div class="post-cover"><img src="%s" alt="%s 封面" loading="lazy"></div>'
-        % (post["cover"], html_mod.escape(post["title"]))
+        % (safe_img_url(post["cover"]), html_mod.escape(post["title"]))
     )
 
 
@@ -515,7 +524,7 @@ def post_card(post, base):
         '<article class="post-card reveal" data-category="%s" data-tags="%s" data-title="%s">\n'
         '  <a class="post-card-link" href="%sblog/posts/%s.html">\n'
         "    %s\n"
-        '    <div class="post-card-meta"><time datetime="%s">%s</time><span>路</span><span class="post-card-category">%s</span></div>\n'
+        '    <div class="post-card-meta"><time datetime="%s">%s</time><span>·</span><span class="post-card-category">%s</span></div>\n'
         '    <h3 class="post-card-title">%s</h3>\n'
         '    <p class="post-card-excerpt">%s</p>\n'
         '    <div class="post-card-tags">%s</div>\n'
@@ -543,7 +552,7 @@ def post_row(post, base):
         '  <time class="post-list-date" datetime="%s">%s</time>\n'
         '  <div class="post-list-main">\n'
         '    <h2 class="post-list-title"><a href="%sblog/posts/%s.html">%s</a></h2>\n'
-        '    <p class="post-list-meta"><span class="post-list-category">%s</span><span>路</span><span>约 %d 分钟</span></p>\n'
+        '    <p class="post-list-meta"><span class="post-list-category">%s</span><span>·</span><span>约 %d 分钟</span></p>\n'
         '    <p class="post-list-excerpt">%s</p>\n'
         '    <div class="post-list-tags">%s</div>\n'
         "  </div>\n"

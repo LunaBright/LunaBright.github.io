@@ -88,6 +88,26 @@
     return out;
   }
 
+  function snippetFor(post, terms) {
+    var content = post.content || "";
+    var lower = norm(content);
+    var idx = -1;
+    var term = null;
+    for (var k = 0; k < terms.length; k++) {
+      var hit = lower.indexOf(terms[k]);
+      if (hit !== -1 && (idx === -1 || hit < idx)) {
+        idx = hit;
+        term = terms[k];
+      }
+    }
+    if (idx === -1 || !term) { return null; }
+    var start = Math.max(0, idx - 40);
+    var end = Math.min(content.length, idx + term.length + 80);
+    var prefix = start > 0 ? "…" : "";
+    var suffix = end < content.length ? "…" : "";
+    return prefix + highlight(content.slice(start, end), terms) + suffix;
+  }
+
   function apply() {
     var terms = tokenize(state.q);
     var visible = 0;
@@ -104,6 +124,19 @@
         }
         if (excerpt) {
           excerpt.innerHTML = highlight(post.excerpt, terms);
+        }
+        var matchEl = item.querySelector(".post-list-match");
+        var snippet = terms.length ? snippetFor(post, terms) : null;
+        if (snippet) {
+          if (!matchEl) {
+            matchEl = document.createElement("p");
+            matchEl.className = "post-list-match";
+            var main = item.querySelector(".post-list-main");
+            if (main) { main.appendChild(matchEl); }
+          }
+          matchEl.innerHTML = "正文匹配： " + snippet;
+        } else if (matchEl) {
+          matchEl.remove();
         }
       }
     });

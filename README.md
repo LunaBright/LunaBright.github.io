@@ -101,7 +101,7 @@
 仓库文件推送到 GitHub 后，还需要做一次设置：
 
 1. 进入仓库 **Settings → Pages**；
-2. **Source / Build and deployment** 选择 **GitHub Actions**（本仓库已带 `.github/workflows/deploy.yml`，每次 push 自动构建）；
+2. **Source / Build and deployment** 选择 **GitHub Actions**（这一步会创建 `github-pages` 部署环境，必须选它，不能再用 "Deploy from a branch"）；
 3. 等 Actions 跑完，访问 `https://lunabright.github.io`。
 
 之后每次在后台保存文章，都会自动触发构建部署，无需再手动操作。
@@ -128,8 +128,14 @@ python build.py --out _site
 **后台保存了但线上没变化？**
 检查仓库 Actions 页有没有跑成功；GitHub Pages 设置是否选的是「GitHub Actions」。
 
-**文章里图片显示不出来？**
-确认图片是通过后台「图片」按钮或粘贴上传的（链接形如 `/media/images/xxx.png`），本地预览时路径以 `/` 开头也会正常。
+**后台上传图片报「Resource not accessible by integration」？**
+这是 Pages CMS 的 GitHub 应用缺少仓库写入权限。修复：GitHub → **Settings → Applications** → 找到 **Pages CMS** → **Configure** → 在 Repository access 里把 `LunaBright/LunaBright.github.io` 勾上（或选 All repositories），保存后再回后台重试。
+
+**后台上传图片报 413 / Failed to upload file？**
+上传的文件太大（服务端对单次上传体积有限制）。把图片压缩到 1MB 以内再传；如果一定要用大图，可以到 GitHub 仓库页面 **Add file → Upload files**，把图片直接传到 `media/images/` 目录，然后在文章里引用 `/media/images/文件名`。
+
+**文章里图片显示为裂开图标？**
+通常是图片上传失败、文章里引用的 `/media/images/...` 文件并不存在。检查文章 Markdown 里的图片地址，确认对应文件已经真的在仓库 `media/images/` 里（上一问的方法）。本站自带图片（如 `/assets/images/background.svg`）在线上是正常的。
 
 **想用自己域名？**
 在仓库 **Settings → Pages → Custom domain** 填写域名，并按提示在 DNS 添加 CNAME 记录。

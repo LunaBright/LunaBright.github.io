@@ -734,6 +734,16 @@ img {
   font-size: 0.93rem;
 }
 
+.post-list-match {
+  margin: 0 0 0.7rem;
+  padding: 0.45rem 0.75rem;
+  border-radius: 8px;
+  background: var(--accent-soft);
+  color: var(--muted);
+  font-size: 0.88rem;
+  line-height: 1.65;
+}
+
 .post-list-tags {
   display: flex;
   flex-wrap: wrap;
