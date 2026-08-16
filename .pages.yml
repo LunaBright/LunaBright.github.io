@@ -33,10 +33,12 @@ content:
       - name: category
         label: 分类
         type: select
+        default: 随笔
         options:
-          - { label: 技术, value: 技术 }
-          - { label: 生活, value: 生活 }
-          - { label: 随笔, value: 随笔 }
+          values:
+            - 技术
+            - 生活
+            - 随笔
       - name: tags
         label: 标签（回车添加）
         type: string

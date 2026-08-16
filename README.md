@@ -81,7 +81,7 @@
 | 想改什么 | 去哪里改 |
 | --- | --- |
 | 站点名称、简介、作者、邮箱、GitHub、头像、背景图、首页大段介绍、技能标签、联系方式 | 后台「**站点设置**」（`data/site.json`） |
-| 文章分类（技术/生活/随笔） | 后台文章字段；想增删分类改 `.pages.yml` 里 `category` 的 `options` |
+| 文章分类（技术/生活/随笔） | 后台文章字段；想增删分类改 `.pages.yml` 里 `category` 的 `options.values`（如 `- 技术`） |
 | 导航菜单、页脚链接 | `templates/header.html`、`templates/footer.html` |
 | 首页区块布局（英雄区、关于、技能、联系） | `pages/home.html` |
 | 博客页顶部介绍文字 | `pages/blog.html` |
