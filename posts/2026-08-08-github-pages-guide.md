@@ -7,7 +7,7 @@ tags:
   - 建站
 date: 2026-08-08
 excerpt: 从零开始、免费托管个人主页的完整指南：创建仓库、生成站点、启用 Pages 三步搞定。
-draft: false
+draft: true
 ---
 GitHub Pages 是 GitHub 提供的**免费静态网站托管服务**。这篇文章记录我搭建这个主页的完整过程，也方便你参考。
 
