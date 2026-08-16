@@ -3,7 +3,7 @@
   "site_url": "https://lunabright.github.io",
   "description": "LunaBright 的个人主页：技术笔记、学习心得与生活记录",
   "author": "LunaBright",
-  "email": "2154626568@qq.com",
+  "email": "wy.wangying-123@qq.com",
   "github": "https://github.com/LunaBright",
   "avatar": "/media/images/f421a8fed36141c2198e2abb9221e3ab45830064.jpg",
   "background": "/assets/images/background.svg",
@@ -26,8 +26,8 @@
   "contact": [
     {
       "label": "邮箱",
-      "value": "2154626568@qq.com",
-      "url": "mailto:2154626568@qq.com"
+      "value": "wy.wangying-123@qq.com",
+      "url": "mailto:wy.wangying-123@qq.com"
     },
     {
       "label": "GitHub",
