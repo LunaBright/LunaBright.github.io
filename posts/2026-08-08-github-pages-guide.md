@@ -1,11 +1,14 @@
 ---
 title: 用 GitHub Pages 搭建个人主页
-date: 2026-08-08
 category: 技术
-tags: [教程, GitHub, 建站]
+tags:
+  - 教程
+  - GitHub
+  - 建站
+date: 2026-08-08
 excerpt: 从零开始、免费托管个人主页的完整指南：创建仓库、生成站点、启用 Pages 三步搞定。
+draft: false
 ---
-
 GitHub Pages 是 GitHub 提供的**免费静态网站托管服务**。这篇文章记录我搭建这个主页的完整过程，也方便你参考。
 
 ## 第一步：创建仓库
