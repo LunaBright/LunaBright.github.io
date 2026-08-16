@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>测试评论区功能 · LunaBright</title>
+  <meta name="description" content="test comments">
+  <meta property="og:title" content="测试评论区功能 · LunaBright">
+  <meta property="og:description" content="test comments">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="alternate" type="application/atom+xml" title="订阅本站" href="../../feed.xml">
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+</head>
+<body>
+  <div class="site-bg" role="presentation" style="background-image:url('/assets/images/background.svg')"></div>
+  <a class="skip-link" href="#content">跳到主要内容</a>
+  <header class="site-nav">
+    <nav class="nav-inner" aria-label="主导航">
+      <a class="nav-logo" href="../../index.html">LunaBright<span class="nav-logo-dot">.</span></a>
+      <button class="nav-toggle" aria-label="打开菜单" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="nav-links">
+        <a class="nav-link" href="../../index.html">首页</a>
+        <a class="nav-link" href="../../index.html#about">关于</a>
+        <a class="nav-link active" href="../../blog/index.html">博客</a>
+        <a class="nav-link" href="../../index.html#contact">联系</a>
+        <a class="nav-link nav-icon" href="https://github.com/LunaBright" target="_blank" rel="noopener" aria-label="GitHub 主页">
+          <svg viewBox="0 0 16 16" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+        </a>
+        <a class="nav-link admin-link" href="https://app.pagescms.org/LunaBright/LunaBright.github.io" target="_blank" rel="noopener" title="打开后台管理">管理</a>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换浅色/深色主题"></button>
+      </div>
+    </nav>
+  </header>
+  <main id="content">
+<article class="post">
+  <div class="container container-narrow">
+    
+    <header class="post-header">
+      <p class="page-eyebrow"><a href="../index.html">← 返回博客</a></p>
+      <h1 class="post-title">测试评论区功能</h1>
+      <div class="post-meta">
+        <span class="post-category">随笔</span>
+        <time datetime="2026-08-16">2026 年 8 月 16 日</time>
+        <span>·</span>
+        <span>约 1 分钟阅读</span>
+        
+      </div>
+    </header>
+    <div class="prose">
+<p>测试</p>
+    </div>
+    
+  </div>
+</article><section class="comments" id="comments">
+  <div class="container container-narrow">
+    <h2 class="comments-title">评论</h2>
+    <script src="https://giscus.app/client.js"
+      data-repo="LunaBright/LunaBright.github.io"
+      data-repo-id="LunaBright/LunaBright.github.io"
+      data-category="Announcements"
+      data-category-id=" Announcements"
+      data-mapping="pathname"
+      data-strict="0"
+      data-reactions-enabled="1"
+      data-emit-metadata="0"
+      data-input-position="bottom"
+      data-theme="preferred_color_scheme"
+      data-lang="zh-CN"
+      crossorigin="anonymous"
+      async>
+    </script>
+  </div>
+</section>  </main>
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p class="footer-brand">LunaBright<span class="nav-logo-dot">.</span></p>
+      <p class="footer-links">
+        <a href="../../index.html">首页</a>
+        <a href="../../blog/index.html">博客</a>
+        <a href="https://github.com/LunaBright" target="_blank" rel="noopener">GitHub</a>
+      </p>
+      <p class="footer-note">© <span id="year"></span> LunaBright · 由 GitHub Pages 免费托管</p>
+    </div>
+  </footer>
+  <button class="to-top" id="to-top" aria-label="回到顶部">
+    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+  </button>
+  <script src="../../assets/js/main.js"></script>
+</body>
+</html>
