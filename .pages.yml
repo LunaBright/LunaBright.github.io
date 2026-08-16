@@ -39,6 +39,7 @@ content:
             - 技术
             - 生活
             - 随笔
+            - 科研
       - name: tags
         label: 标签（回车添加）
         type: string
