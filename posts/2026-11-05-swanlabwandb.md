@@ -1,5 +1,5 @@
 ---
-title: SwanLab的使用（作为Wandb的替代）
+title: SwanLab的使用方法（作为Wandb的替代）
 category: 技术
 tags:
   - wandb
