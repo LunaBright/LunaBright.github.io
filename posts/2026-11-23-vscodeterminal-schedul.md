@@ -1,10 +1,11 @@
 ---
-title: vscode的插件探索——Terminal Schedul
+title: vscode的插件探索——Terminal Scheduler
 category: 技术
 tags:
   - vscode插件
   - codex
   - 定时任务
+  - Terminal Scheduler
 date: 2026-11-23
 cover: /media/images/snipaste2026-11-2321-08-47.png
 excerpt: 使用vscode的插件Terminal Scheduler设置定时发送消息给终端中的codex对话（或普通的终端）。可以保证额度恢复时尽快继续任务。
@@ -34,6 +35,7 @@ draft: false
 像这样的一行内容就代表一个定时发送任务，可以同时设置多行，在规定的时间发送。
 
 3. 加载配置文件：在vscode中`ctrl+shift+p`，然后在搜索框中输入`Terminal Scheduler: Reload Config`，点击后回车，确认右下角状态栏中出`Sched: 1 pending`或类似的字样，说明设置成功。后续设定新任务并保存配置文件后会同样出现类似的字样。若没有出现，可以尝试再次加载配置文件。图示如下（当前没有设置定时发送任务）：
-  ![image.png](/media/images/image-11.png)
+
+![image.png](/media/images/image-11.png)
 
 开始使用时可以先设定一个最近的时间测试一下功能是否正常。
