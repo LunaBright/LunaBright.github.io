@@ -7,7 +7,6 @@ tags:
   - 定时任务
   - Terminal Scheduler
 date: 2026-11-23
-cover: /media/images/snipaste2026-11-2321-08-47.png
 excerpt: 使用vscode的插件Terminal Scheduler设置定时发送消息给终端中的codex对话（或普通的终端）。可以保证额度恢复时尽快继续任务。
 draft: false
 ---
